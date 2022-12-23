@@ -200,5 +200,20 @@ function check(text) {
   }
 }
 
+function uncheck(text) {
+  var task = text.trim().split(" ");
+  task.shift();
+  if (isNaN(Number(task[0]))) {
+      console.log(
+          "Please enter the number of the task you'd like to uncheck"
+      );
+  } else {
+      let n = Number(task[0]);
+      tasks[n - 1].status = false;
+      console.log(`Task ${n} unchecked`);
+      list();
+  }
+}
+
 // The following line starts the application
 startApp("Hisham El Ahdab")
