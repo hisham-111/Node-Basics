@@ -93,14 +93,31 @@ function help(){
 function list() {
   tasks.map((g, index) => {
       if (g.status) {
-          console.log(`${index + 1} - [✔] ${g.task}`);
+          console.log(`${index + 1}`);
       } else {
-          console.log(`${index + 1} - [ ] ${g.task}`);
+          console.log(`${index + 1} `);
       }
   });
 }
 
 
+
+
+function add(text) {
+  var task = text.trim().split(" ");
+  task.shift();
+  task = task.join(" ");
+  if (task.trim()) {
+      let g = {
+          task: task.trim(),
+          status: false,
+      };
+      tasks.push(g);
+      console.log(`${task} task added`);
+  } else {
+      console.log("Please add a task");
+  }
+}
 
 /**
  * Exits the application
