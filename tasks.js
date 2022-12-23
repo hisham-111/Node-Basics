@@ -52,6 +52,9 @@ else if (text.trim().split(" ")[0] === "add") {
 } else if (text.trim().split(" ")[0] === "remove") {
   remove(text);
 }
+else if (text.trim().split(" ")[0] === "edit") {
+  edit(text);
+}
   else{
     unknownCommand(text);
   }
@@ -184,7 +187,18 @@ function quit(){
  process.exit();
 }
 
-
+function check(text) {
+  var task = text.trim().split(" ");
+  task.shift();
+  if (isNaN(Number(task[0]))) {
+      console.log("Please enter the number of the task you'd loke to check");
+  } else {
+      let n = Number(task[0]);
+      tasks[n - 1].status = true;
+      console.log(`Checked task ${n}`);
+      list();
+  }
+}
 
 // The following line starts the application
 startApp("Hisham El Ahdab")
