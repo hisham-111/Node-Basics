@@ -69,7 +69,7 @@ function unknownCommand(c){
 function hello(){
   console.log('hello!')
 }
-//help function give us more information about what and how other functions work ! 
+//help function give us more information about what and how other functions work! 
 function help(){
   console.log('help : ----hello => print hello! \n  ----quit => Quitting now, goodbye!' );
 }
