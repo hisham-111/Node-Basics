@@ -38,7 +38,7 @@ function onDataReceived(text) {
     quit();
   }
   else if (text.startsWith("hello")) {
-    hello(text.trim());
+    hello(text.trim()) ;
   }
  
   else if(text==='help\n'){
