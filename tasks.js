@@ -44,6 +44,14 @@ function onDataReceived(text) {
   else if(text==='help\n'){
     help();
   }
+  else if (text === "list\n") {
+    list();
+}
+else if (text.trim().split(" ")[0] === "add") {
+  add(text);
+} else if (text.trim().split(" ")[0] === "remove") {
+  remove(text);
+}
   else{
     unknownCommand(text);
   }
@@ -78,6 +86,21 @@ function unknownCommand(c){
 function help(){
   console.log('help : ----hello => print hello! \n  ----quit => Quitting now, goodbye! \n  ----update the text hello function' );
 }
+
+
+// FUNCTION list it lists all the tasks 
+
+function list() {
+  tasks.map((g, index) => {
+      if (g.status) {
+          console.log(`${index + 1} - [✔] ${g.task}`);
+      } else {
+          console.log(`${index + 1} - [ ] ${g.task}`);
+      }
+  });
+}
+
+
 
 /**
  * Exits the application
