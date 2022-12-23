@@ -130,11 +130,11 @@ function remove(text) {
           }
       }
       if (b === tasks.length) {
-          console.log(`task ${n} does not exist`);
+          console.log(`task ${n} does not exist`) ;
       }
   } else {
       tasks.pop();
-      console.log("last task removed");
+      console.log("last task removed") ;
   }
 }
 
