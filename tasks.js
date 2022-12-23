@@ -66,7 +66,9 @@ function unknownCommand(c){
 function hello(){
   console.log('hello!')
 }
-
+function help(){
+  console.log('help : hello => print hello! \n\n  quit => Quitting now, goodbye!' );
+}
 
 /**
  * Exits the application
