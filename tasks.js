@@ -37,9 +37,10 @@ function onDataReceived(text) {
   if (text === 'quit\n'|| text === 'exit\n'){
     quit();
   }
-  else if(text === 'hello\n'){
-    hello();
+  else if (text.startsWith("hello")) {
+    hello(text.trim());
   }
+ 
   else if(text==='help\n'){
     help();
   }
@@ -66,9 +67,13 @@ function unknownCommand(c){
  *
  * @returns {void}
  */
-function hello(){
-  console.log('hello!')
+ function hello(N) {
+  N = N.replace("hello", "");
+  console.log("hello" + N + "!");
 }
+
+
+
 //help function give us more information about what and how other functions work! 
 function help(){
   console.log('help : ----hello => print hello! \n  ----quit => Quitting now, goodbye!' );
@@ -76,13 +81,18 @@ function help(){
 
 /**
  * Exits the application
- *
  * @returns {void}
+ * 
  */
+
+
+
 function quit(){
-  console.log('Quitting now, goodbye!')
-  process.exit();
+ console.log('Quitting now, goodbye!')
+ process.exit();
 }
+
+
 
 // The following line starts the application
 startApp("Hisham El Ahdab")
