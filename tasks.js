@@ -84,7 +84,7 @@ function unknownCommand(c){
 
 //help function give us more information about what and how other functions work! 
 function help(){
-  console.log('help : ----hello => print hello! \n  ----quit => Quitting now, goodbye! \n  ----update the text hello function' );
+  console.log('help : ----hello => print hello! \n  ----quit => Quitting now, goodbye! \n  ----update the text hello function \n  ----add list list all tasks \n  ---- add a task. Store the task in a list (array) \n  ----"remove" command that allows to remove' );
 }
 
 
@@ -116,6 +116,25 @@ function add(text) {
       console.log(`${task} task added`);
   } else {
       console.log("Please add a task");
+  }
+}
+
+function remove(text) {
+  if (text.trim().split(" ")[1]) {
+      var n = text.trim().split(" ")[1];
+      var b = tasks.length;
+      for (let i = 0; i < tasks.length; i++) {
+          if (i == n - 1) {
+              tasks.splice(i, 1);
+              console.log(`task ${n} removed`);
+          }
+      }
+      if (b === tasks.length) {
+          console.log(`task ${n} does not exist`);
+      }
+  } else {
+      tasks.pop();
+      console.log("last task removed");
   }
 }
 
