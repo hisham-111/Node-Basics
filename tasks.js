@@ -87,7 +87,7 @@ function unknownCommand(c){
 
 //help function give us more information about what and how other functions work! 
 function help(){
-  console.log('help : ----hello => print hello! \n  ----quit => Quitting now, goodbye! \n  ----update the text hello function \n  ----add list list all tasks \n  ---- add a task. Store the task in a list (array) \n  ----"remove" command that allows to remove' );
+  console.log('help : ----hello => print hello! \n  ----quit => Quitting now, goodbye! \n  ----update the text hello function \n  ----add list list all tasks \n  ---- add a task. Store the task in a list (array) \n  ----"remove" command that allows to remove  \n  ---- "check and uncheck command"' );
 }
 
 
