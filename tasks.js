@@ -138,6 +138,39 @@ function remove(text) {
   }
 }
 
+
+
+
+function edit(text) {
+  var task = text.trim().split(" ");
+  task.shift();
+  if (isNaN(Number(task[0]))) {
+      task = task.join(" ");
+      if (task.trim()) {
+          tasks[tasks.length - 1].task = task;
+          console.log(`task edited to ${task}`);
+          list();
+      } else {
+          console.log("Please edit an existing task");
+      }
+  } else {
+      let n = Number(task[0]);
+      task.shift();
+      task = task.join(" ");
+      if (task.trim()) {
+          if (n <= tasks.length) {
+              tasks[n - 1].task = task;
+              console.log(`task ${n} is edited to ${task}`);
+              list();
+          } else {
+              console.log("number of task does not exist");
+          }
+      } else {
+          console.log("Please edit an existing task");
+      }
+  }
+}
+
 /**
  * Exits the application
  * @returns {void}
